@@ -9124,7 +9124,8 @@ input {
           -webkit-align-items: center;
           -ms-flex-align: center;
           align-items: center;
-          width: 135px; }
+          width: 135px;
+          z-index: 1; }
         .header-wrapper .header-top .main-social .language .lang .hide-list {
           display: none;
           position: absolute;
@@ -11125,10 +11126,16 @@ input {
         color: #6e6e6e;
         font-size: 16px;
         font-family: "Gilroy"; }
+        @media (max-width: 991px) {
+          .vacancy-tab .tab-items .tab-content .tab-form .buttons label {
+            font-size: 10px; } }
         .vacancy-tab .tab-items .tab-content .tab-form .buttons label i {
           font-size: 20px;
           color: #6e6e6e;
           padding-right: 10px; }
+          @media (max-width: 991px) {
+            .vacancy-tab .tab-items .tab-content .tab-form .buttons label i {
+              font-size: 12px; } }
 
 .villages-wrapper .main-desc p {
   color: #666666;
@@ -11360,7 +11367,7 @@ input {
   @media (max-width: 991px) {
     .where-wrapper .img-content {
       margin-bottom: 20px; } }
-  @media (min-width: 992px) {
+  @media (max-width: 991px) {
     .where-wrapper .img-content .img {
       margin-bottom: 20px; } }
   .where-wrapper .img-content img {

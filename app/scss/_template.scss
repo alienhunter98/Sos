@@ -541,6 +541,7 @@ input{
 							display: flex;
 							align-items: center;
 							width:135px;
+							z-index: 1;
 						}
 					}
 
@@ -2495,10 +2496,16 @@ input{
 						color:#6e6e6e;
 						font-size: 16px;
 						font-family: $font-family-1;
+						@media(max-width: 991px){
+							font-size: 10px;
+						}
 						i{
-							font-size: 20px;
+							font-size: 20px; 
 							color:#6e6e6e;
 							padding-right: 10px;
+							@media(max-width: 991px){
+								font-size: 12px;
+							}
 						}
 					}
 				}
@@ -2764,7 +2771,7 @@ input{
 			margin-bottom: 20px;
 		}
 		.img{
-			@media(min-width: 992px){
+			@media(max-width: 991px){
 				margin-bottom: 20px;
 			}
 		}
