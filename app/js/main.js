@@ -7,6 +7,16 @@ $(document).ready(function(){
 	$('[type="search"]').focusout(function(){
 	    $('#search').prop('checked','')
 	})
+	/*AOS*/
+    if( "AOS" in window ){
+      AOS.init({
+        offset: 100,
+        once: true,
+        duration: 1100,
+        delay: 150
+      });
+      setTimeout(function() { AOS.refresh(); }, 1);
+    }
 	/*FANCYBOX*/
 	if ($("[data-fancybox]").length != 0)
 		$("[data-fancybox]").fancybox({
@@ -221,8 +231,41 @@ $(document).ready(function(){
 
 });
 
-
-
+// Анимация цифр
+var counterAnimateContainer = $(".counter-animate-container") || null;
+$(window).on("scroll.animate", function(){
+  if( counterAnimateContainer.length && !counterAnimateContainer.hasClass("counter-animate-started") && scrolledDiv( counterAnimateContainer ) ){
+      counterAnimateContainer.addClass("counter-animate-started");
+      setTimeout(function(){
+        $(".counter-animate").map( function(i, el){
+          var el = $(el);
+          var num = el.text()*1;
+          if( isNaN(num) )
+            return;
+          var cnt = 0;
+          el.text(cnt)
+          var interval = setInterval(function(){
+            el.text( Math.round(cnt += num/(2*25) ) )
+            if( cnt >= num ){
+              clearInterval( interval );
+              el.text( num );
+            }
+          }, 75);
+         }, 2000);
+      });
+  }
+});
+function scrolledDiv(el) {
+  try {
+    var docViewTop = $(window).scrollTop(),
+      docViewBottom = docViewTop + $(window).height(),
+      elTop = $(el).offset().top,
+      elBottom = elTop + $(el).height() / 1.8;
+  } catch (err) {
+    console.error();
+  }
+  return elBottom <= docViewBottom && elTop >= docViewTop;
+}
 
 
 

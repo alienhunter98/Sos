@@ -8,7 +8,7 @@ $font-family-1:"Gilroy";
 /*desc-settings*/
 .ul-style-1{
 	padding: 0;
-	margin-bottom: 40px;
+	margin-bottom: 40px; 
 	@media(max-width: 991px){
 		margin-bottom: 20px;
 	}
@@ -1358,6 +1358,12 @@ input{
 				margin:10px 0;
 				font-weight: bold;
 				color:$color-1;
+				span{
+					font-size: 40px;
+					@media(max-width: 991px){
+						font-size: 16px;
+					}
+				}
 			}
 			p{
 				color:#797a7a;

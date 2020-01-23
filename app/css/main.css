@@ -10004,6 +10004,11 @@ input {
         margin: 10px 0;
         font-weight: bold;
         color: #009ee0; }
+        .waw-wrapper .waw-more-info .desc-content h1 span {
+          font-size: 40px; }
+          @media (max-width: 991px) {
+            .waw-wrapper .waw-more-info .desc-content h1 span {
+              font-size: 16px; } }
       .waw-wrapper .waw-more-info .desc-content p {
         color: #797a7a; }
       .waw-wrapper .waw-more-info .desc-content:not(:first-child) {
